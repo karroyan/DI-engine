@@ -50,7 +50,8 @@ setup(
     },
     python_requires=">=3.7",
     install_requires=[
-        'gym>=0.25.1, <0.26.0',  # pypy incompatible; some environmrnt only support gym==0.22.0
+        'setuptools<=66.1.1',
+        'gym==0.25.1',  # pypy incompatible; some environmrnt only support gym==0.22.0
         'torch>=1.1.0, <=1.12.1',  # If encountering pytorch errors, you need to do something like https://github.com/opendilab/DI-engine/discussions/81
         'numpy>=1.18.0',
         'pandas',
@@ -78,7 +79,7 @@ setup(
         'pynng',
         'redis',
         'pettingzoo==1.12.0',
-        'DI-treetensor>=0.4.0',
+        'DI-treetensor>=0.3.0',
         'DI-toolkit>=0.0.2',
         'hbutils>=0.5.0',
         'wandb',
@@ -86,12 +87,13 @@ setup(
         'MarkupSafe==2.0.1',  # compatibility
         'h5py',
         'scikit-learn',
+        'hickle',
     ],
     extras_require={
         'test': [
             'gym[box2d]>=0.25.0',
             'opencv-python',  # pypy incompatible
-            'coverage>=5',
+            'coverage>=5,<=7.0.1',
             'mock>=4.0.3',
             'pytest~=7.0.1',  # required by gym>=0.25.0
             'pytest-cov~=3.0.0',
@@ -116,7 +118,7 @@ setup(
         'common_env': [
             'ale-py',  # >=0.7.5',  # atari
             'autorom',
-            'gym[all]>=0.25.0'
+            'gym[all]>=0.25.0',
             'cmake>=3.18.4',
             'opencv-python',  # pypy incompatible
         ],
